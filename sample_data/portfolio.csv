@@ -1,0 +1,4 @@
+symbol,company,quantity,price,sector
+AAPL,Apple,10,200.0,Technology
+MSFT,Microsoft,8,300.0,Technology
+XOM,Exxon,20,100.0,Energy

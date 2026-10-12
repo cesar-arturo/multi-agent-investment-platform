@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portfolio-ai"
+version = "0.1.0"
+description = "Backend for the Multi-Agent Investment Intelligence Platform"
+readme = "README.md"
+authors = [{ name = "Cesar Alba" }]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.111,<1.0",
+    "uvicorn[standard]>=0.30,<1.0",
+    "pydantic>=2.8,<3.0",
+    "pandas>=2.2,<3.0",
+    "numpy>=1.26,<3.0",
+    "python-multipart>=0.0.9",
+    "python-dotenv>=1.0,<2.0",
+    "httpx>=0.27,<1.0",
+    "langgraph>=1.0,<2.0",
+]
+
+[project.optional-dependencies]
+llm = [
+    "langchain>=1.0,<2.0",
+    "langchain-openai>=1.0,<2.0",
+    "langchain-anthropic>=1.0,<2.0",
+]
+research = [
+    "yfinance>=0.2.65,<1.0",
+]
+dev = [
+    "pytest>=8.2,<9.0",
+    "pytest-cov>=5.0,<6.0",
+    "ruff>=0.6,<1.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

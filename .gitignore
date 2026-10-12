@@ -218,3 +218,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project additions
+.env.*
+!.env.example
+.DS_Store
